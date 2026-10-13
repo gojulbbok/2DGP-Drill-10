@@ -86,7 +86,7 @@ def reset_world():
     zombie = Zombie()
     world.append(zombie)
 
-    Balls = [ball() for i in range(20)]
+    Balls = [Ball() for i in range(20)]
     world += Balls
 
     team = [boy() for i in range(11)]  # 11명의 boy 객체를 생성
