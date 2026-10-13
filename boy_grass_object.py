@@ -53,8 +53,12 @@ class Ball:
         
         else:
             self.image = load_image('ball41x41.png')
+    
     def update(self):
-        pass
+         self.y -= random.randint(1,10)
+        if(self.y <= 60):
+            self.y = 60
+            
     def draw(self):
         pass
 
