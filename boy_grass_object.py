@@ -58,9 +58,9 @@ class Ball:
          self.y -= random.randint(1,10)
         if(self.y <= 60):
             self.y = 60
-            
+
     def draw(self):
-        pass
+       self.image.draw(self.x, self.y)
 
 
 def handle_events():
