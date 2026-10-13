@@ -44,23 +44,6 @@ class Zombie:
         frame_height = self.image.h
         self.image.clip_draw(self.frame * frame_width, 0, frame_width, frame_height, self.x, self.y, frame_width //2, frame_height // 2)
 
-class ball:
-    def __init__(self):
-        self.x, self.y = random.randint(0, 800), 599
-        if (random.randint(1, 2) % 2 == 0):
-            self.image = load_image('ball21x21.png')
-        else:
-            self.image = load_image('ball41x41.png')
-    
-    def update(self):
-        self.y -= random.randint(1,10)
-        if(self.y <= 60):
-            self.y = 60
-    def draw(self):
-        self.image.draw(self.x, self.y)
-        
-
-
 def handle_events():
     global running
     events = get_events()
@@ -83,9 +66,6 @@ def reset_world():
 
     zombie = Zombie()
     world.append(zombie)
-
-    Balls = [ball() for i in range(20)]
-    world += Balls
 
     team = [boy() for i in range(11)]  # 11명의 boy 객체를 생성
     world += team  # 팀을 월드에 추가
@@ -110,7 +90,7 @@ while running:
     handle_events()
     update_world()
     render_world()
-    delay(0.03)
+    delay(0.05)
 
 
 close_canvas()
